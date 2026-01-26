@@ -1,32 +1,26 @@
-def calcularMedia(notas):
-    return sum(notas) / len(notas)
+gastos = []
 
+for _ in range(3):
+    despesas = {}
 
-listaDeNotas = []
+    despesas["Nome"] = input("Digite o nome: ")
+    despesas["Valor"] = float(input("Digite o valor: "))
 
-while True:
+    gastos.append(despesas)
 
-    entrada = input("Digite uma nota (ou 'sair' para encerrar): ")
-    
-    if entrada.lower() == 'sair':
-        break
-    try:
-        nota = float(entrada)
-        listaDeNotas.append(nota)
-    except ValueError:
-        print("Favor digitar um numero valido, ou digite 'sair': ")
+print(gastos)
 
+total = 0
+maiorValor = 0
+nomeDoMaisCaro = 0
 
-print(listaDeNotas)
+for item in gastos:
+    total += item["Valor"]
 
-if len(listaDeNotas) > 0:
+    if item["Valor"] > maiorValor:
+        maiorValor = item["Valor"]
+        nomeDoMaisCaro = item["Nome"]
 
-    media = calcularMedia(listaDeNotas)
-    print(media)
-
-else:
-    print("Não foi encontrado nenhum numero na lista ")
-
-
-
+print(f"{total:.2f}")
+print(f"{nomeDoMaisCaro}, {maiorValor}")
 

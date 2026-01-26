@@ -1,9 +1,18 @@
-def inverterOrdem(palavra):
-    return palavra[::-1]
+gastos = []
 
+for _ in range(3):
+    despesas = {}
 
-print("Digite a palavra: ")
-palavra = input()
+    despesas["Nome"] = input("Digite o nome: ")
+    despesas["Valor"] = float(input("Digite o valor: "))
 
-palavraInvertida = inverterOrdem(palavra)
-print(palavraInvertida)
+    gastos.append(despesas)
+
+print (gastos)
+
+total = 0
+
+for item in gastos:
+    total += item["Valor"]
+
+print(total)

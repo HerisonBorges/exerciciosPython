@@ -1,14 +1,19 @@
-def saoAnagramas(palavra1, palavra2):
-    return sorted(palavra1) == sorted(palavra2) # Verifica se as palavras são anagramas ou não ao ordenar seus caracteres
+aluno = {}
 
-print("Digite a primeira palavra: ")
-palavra1 = input()
-print("Digite a segunda palavra: ")
-palavra2 = input()
+aluno["Nome"] = input("Digite o nome: ")
+aluno["Nota1"] = float(input("Digite a primeira nota: "))
+aluno["Nota2"] = float(input("Digite a segunda nota: "))
 
-if saoAnagramas(palavra1, palavra2):
-    print(f"As palavras '{palavra1}' e '{palavra2}' são anagramas.")
-else:
-    print(f"As palavras '{palavra1}' e '{palavra2}' não são anagramas.")
+print(aluno)
 
-    
+aluno["Media"] = (aluno["Nota1"] + aluno["Nota2"]) / 2
+
+print (aluno)
+
+if aluno["Media"] >= 7:
+    aluno["Situação"] = "Aprovado"
+
+else: 
+    aluno["Situação"] = "Reprovado"
+
+print(aluno)
